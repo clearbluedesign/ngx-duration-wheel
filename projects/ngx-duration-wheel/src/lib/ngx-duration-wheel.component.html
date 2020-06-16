@@ -1,0 +1,10 @@
+<div class="duration-wheel">
+    <div class="duration-wheel-label">
+        {{ view }}
+    </div>
+
+    <div class="duration-wheel-scrollable" (mousewheel)="onScroll($event)">
+        <div #scrollable draggable="false" class="duration-wheel-scrollable-inner" [style]="'background-size: ' + (step * 100 / max) + '% 100%'"></div>
+        <div class="duration-wheel-overlay" draggable="true" (dragstart)="onDragStart($event)" (drag)="onDragMove($event)" (dragend)="onDragEnd($event)"></div>
+    </div>
+</div>
